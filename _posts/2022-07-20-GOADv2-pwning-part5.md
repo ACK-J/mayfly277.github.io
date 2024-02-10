@@ -41,61 +41,6 @@ cme ldap winterfell.north.sevenkingdoms.local -u jon.snow -p iknownothing -d nor
 
 ![machineaccountquota.png](/assets/blog/GOAD/machineaccountquota.png)
 
-### Prepare Impacket
-
-Before exploiting with impacket let's prepare our impacket version with the pull request we want.
-
-- Clone the impacket repo
-
-```shell
-cd /opt/tools
-git clone https://github.com/SecureAuthCorp/impacket myimpacket
-```
-
-- Create our branch
-
-```shell
-cd myimpacket
-git checkout -b mydev
-```
-
-- Create a venv to don't interfer with the host environment and install the repository we just checkout
-
-```shell
-python3 -m virtualenv myimpacket
-source myimpacket/bin/activate
-python3 -m pip install .
-```
-
-- Get the waiting pull requests we want (You can find a huge list of nice PR to merge in exegol install script : https://github.com/ShutdownRepo/Exegol-images/blame/main/sources/install.sh#L286 )
-
-```shell
-git fetch origin pull/1224/head:1224
-git fetch origin pull/1202/head:1202
-```
-
-- Merge the pull requests to our branch
-
-```shell
-git merge 1202
-git merge 1224
-```
-
-- Reorder the path entry result to load our pyenv bin before the others in the $PATH (this is needed on zsh, in bash it take directly our pyenv bins)
-
-```shell
-rehash
-```
-
-- Now let's check we get all the binaries and options we want :
-
-```shell
-renameMachine.py
-getST.py
-```
-
-- Excellent, we are now using the latest impacket version with Shutdown (@_nwodtuhs) pull requests needed for this attack :)
-
 
 ### Exploit
 
